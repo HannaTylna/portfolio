@@ -1,0 +1,176 @@
+body {
+  background-color: #D8BFD8;
+  font: 100% Lucida Console, Courier, monospace;
+  height: 100%;
+}
+
+.header__container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 50;
+}
+.header:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #6B0052;
+  z-index: 2;
+}
+
+.header__body {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  align-items: center;
+}
+
+.header__logo {
+  flex: 0 0 60px;
+  position: relative;
+  z-index: 3;
+}
+.header__logo img {
+  max-width: 100%;
+}
+
+.header__list {
+  display: flex;
+  position: relative;
+  z-index: 2;
+}
+.header__list li {
+  list-style: none;
+  margin: 0px 0px 0px 20px;
+}
+
+.header__link {
+  color: black;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 18px;
+  text-decoration: none;
+}
+.header__link:hover {
+  border-bottom: 2px solid black;
+}
+
+.content {
+  padding: 100px 0px 0px 0px;
+}
+
+header {
+  font-weight: bold;
+  text-align: center;
+  font-size: 40px;
+  color: #6B0052;
+  width: 100%;
+}
+
+h3 {
+  text-align: center;
+}
+
+.container {
+  max-width: 1180px;
+  display: flex;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.photo {
+  width: 25%;
+  padding: 60px 40px;
+}
+.photo img {
+  border-radius: 20em;
+  box-shadow: 0px 0px 10px 10px #0000bd;
+}
+
+.info {
+  width: 75%;
+  padding: 60px 40px;
+}
+
+.info__about-me p {
+  text-align: justify;
+}
+
+.info__education ul li {
+  list-style: none;
+}
+
+@media (max-width: 767px) {
+  .header__body {
+    height: 50px;
+  }
+
+  .header__logo {
+    flex: 0 0 40px;
+  }
+
+  .header__burger {
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 20px;
+    position: relative;
+    z-index: 3;
+  }
+  .header__burger:before {
+    content: "";
+    background-color: black;
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    left: 0;
+    top: 0;
+  }
+  .header__burger:after {
+    content: "";
+    background-color: black;
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    left: 0;
+    bottom: 0;
+  }
+  .header__burger span {
+    position: absolute;
+    background-color: black;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    top: 9px;
+  }
+
+  .header__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: cornsilk;
+    padding: 70px 10px 20px 10px;
+  }
+
+  .header__list {
+    display: block;
+  }
+  .header__list li {
+    margin: 0px 0px 20px 0px;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
