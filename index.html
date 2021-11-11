@@ -5,7 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    
+    <!-- <script src="js/jquery-1.10.2.js"></script>
+    <script>
+        var $ = jQuery;
+        $(document).ready(function(){
+            $(`.header__burger`).click(function(event) {
+                $(`.header__burger, .header__menu`).toggleclass(`active`);
+            });
+        })
+        $('.header__list').click(function(event) {
+            $('.header__burger,.header__menu').removeClass('active');
+            $('body').removeClass('lock');
+        })
+    </script> -->
     <title>Hanna Tylna</title>
 </head>
 <body>
@@ -41,17 +53,6 @@
     </div>
     <div class="content">
         <div class="container">
-            <div>
-                <header>Hanna Tylna</header>
-                <div class="photo">
-                    <img 
-                        src="photo.jpg" 
-                        alt="Hanna Tylna's photo"
-                        width="300px"
-                        height="300px"
-                    />
-                </div>
-            </div>
             <div class="info">
                 <div class="info__about-me">
                     <h3>About me</h3>
@@ -71,7 +72,17 @@
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti voluptate deserunt quasi omnis, mollitia unde praesentium deleniti obcaecati vero distinctio quas vitae minima quidem non quibusdam harum rem velit magni.
                     </p>
                 </div>
-                
+            </div>
+            <div class="photo-box">
+                <header>Hanna Tylna</header>
+                <div class="photo">
+                    <img 
+                        src="photo.jpg" 
+                        alt="Hanna Tylna's photo"
+                        width="300px"
+                        height="300px"
+                    />
+                </div>
             </div>
         </div>
         
@@ -86,12 +97,6 @@
             <a href=""></a>
         </div>
     </div>
-   <!--  <script>
-        $(document).ready(function(){
-            $(`.header__burger`).click(function(event) {
-                $(`.header__burger, .header__menu`).toggleclass(`active`);
-            });
-        })
-    </script> -->
+    
 </body>
 </html>

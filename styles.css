@@ -1,7 +1,7 @@
 body {
   background-color: #D8BFD8;
   font: 100% Lucida Console, Courier, monospace;
-  height: 100%;
+  width: 1180px;
 }
 
 .header__container {
@@ -41,7 +41,7 @@ body {
   position: relative;
   z-index: 3;
 }
-.header__logo img {
+.header__logoimg {
   max-width: 100%;
 }
 
@@ -49,18 +49,20 @@ body {
   display: flex;
   position: relative;
   z-index: 2;
+  list-style: none;
 }
-.header__list li {
+.header__listli {
   list-style: none;
   margin: 0px 0px 0px 20px;
 }
 
 .header__link {
   color: black;
-  font-weight: bold;
   text-transform: uppercase;
   font-size: 18px;
   text-decoration: none;
+  font-family: sans-serif;
+  margin-right: 20px;
 }
 .header__link:hover {
   border-bottom: 2px solid black;
@@ -71,44 +73,44 @@ body {
 }
 
 header {
-  font-weight: bold;
-  text-align: center;
   font-size: 40px;
   color: #6B0052;
   width: 100%;
 }
 
-h3 {
-  text-align: center;
-}
-
 .container {
-  max-width: 1180px;
   display: flex;
   margin: 0 auto;
   padding: 0 10px;
 }
 
+.photo-box {
+  width: 25%;
+}
+
 .photo {
   width: 25%;
-  padding: 60px 40px;
 }
-.photo img {
+.photoimg {
   border-radius: 20em;
   box-shadow: 0px 0px 10px 10px #0000bd;
 }
 
 .info {
   width: 75%;
-  padding: 60px 40px;
 }
 
-.info__about-me p {
+.info__about-mep {
   text-align: justify;
 }
 
-.info__education ul li {
+.info__educationulli {
   list-style: none;
+}
+
+.rights {
+  position: fixed;
+  bottom: 0;
 }
 
 @media (max-width: 767px) {
@@ -146,7 +148,7 @@ h3 {
     left: 0;
     bottom: 0;
   }
-  .header__burger span {
+  .header__burgerspan {
     position: absolute;
     background-color: black;
     left: 0;
@@ -168,7 +170,7 @@ h3 {
   .header__list {
     display: block;
   }
-  .header__list li {
+  .header__listli {
     margin: 0px 0px 20px 0px;
   }
 }
