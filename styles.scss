@@ -2,14 +2,21 @@
 @mixin fontW {
     font-weight: bold;
 }
-@mixin height {
-    height: 100%;    
+@mixin height($h){
+    height: $h;    
+}
+@mixin width($w) {
+    width: $w;    
+}
+@mixin listStyle() {
+    list-style: none;
 }
 
 body {
+    @include width(1180px);
     background-color: variables.$color_4;
     font: 100% variables.$fontFamily;
-    width: 1180px;
+    margin: 0 auto;
 }
 .header__container {
     max-width: 1180px;
@@ -18,49 +25,48 @@ body {
 }
 
 .header {
+    @include width(100%);
     position: fixed;
-    width: 100%;
     top: 0;
     left: 0;
-    z-index: 50;
+    z-index: 5;
     
     &:before {
+        @include height(100%);
+        @include width(100%);
         content: '';
         position: absolute;
         top: 0;
         left: 0;
-        width: 100%;
-        height: 100%;
         background-color: variables.$color_2;
         z-index: 2;
     }
     
 }
 .header__body {
+    @include height(80px);
     position: relative;
     display: flex;
     justify-content: space-between;
-    height: 80px;
     align-items: center;    
 }
 .header__logo {
     flex: 0 0 60px;
-    position: relative;
+    /* position: relative; */
     z-index: 3;
 
-    &img{
+    & img{
         max-width: 100%;
     }
 }
 
 .header__list {
+    @include listStyle();
     display: flex;
     position: relative;
     z-index: 2;
-    list-style: none;
 
-    &li{
-        list-style: none;
+    & li{
         margin: 0px 0px 0px 20px;
     }
 }
@@ -73,120 +79,149 @@ body {
     text-decoration: none;
     font-family: sans-serif;
     margin-right: 20px;
+    letter-spacing: 0.1em;
 
     &:hover {
-        border-bottom: 2px solid variables.$color_1;
+        color: variables.$color_6;
+        border-bottom: 2px solid variables.$color_6;
+        font-size: 20px;
     }
 }
 
 .content {
+    max-width: 1180px;
     padding: 100px 0px 0px 0px;
 }
-
-header {
-
-    font-size: 40px;
-    color: variables.$color_2;
-    width: 100%;
-}
-
-h3 {
-
-}
-.container {
-    
-    display: flex;
-    margin: 0 auto;
+.content__container {
+    max-width: 1180px;
     padding: 0 10px;
 }
+.content__body {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  
+}
+header {
+    @include width(100%);
+    font-size: 40px;
+    color: variables.$color_2;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* h3 {
+
+} */
 .photo-box {
-    width: 25%;
+    @include width(30%);
 
 }
 .photo {
-    width: 25%;
+    @include width(25%);
+    margin-top: 30px;
 
-    &img {
+    & img {
         border-radius: 20em;
-        box-shadow: 0px 0px 10px 10px rgb(0 0 189);
+        box-shadow: 0px 0px 10px 10px variables.$color_5;
     }
 }
 .info {
-    width: 75%;
+    @include width(65%);
 }
 .info__about-me {
-    &p{
+    & p{
         text-align: justify;
     }
 }
-.info__education {
-    &ul {
-        &li {
-            list-style: none;
-        }
+.info__items{
+    @include listStyle();
+}
+.footer {
+    display: flex;
+    justify-content: flex-end;
+}
+.footer__social-link {
+    width: 30%;
+    text-transform: uppercase;
+    & a{
+        color: variables.$color_2;
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 18px;
+        letter-spacing: 0.1em;
+    }
+    & a:hover{
+        color: variables.$color_5;
+        font-size: 20px;
     }
 }
-.rights {
+.copyrights {
     position: fixed;
-    bottom: 0;
+    left: 140px;
+    bottom: 50px;
 }
+.social-links{
+    display: flex;
+    width: 100%;
+}
+
 
 @media (max-width: 767px){
     .header__body {
-        height: 50px;
+        @include height(50px);
     }
     .header__logo {
         flex: 0 0 40px;
     }
     .header__burger{
+        @include height(20px);
+        @include width(30px);
         display: block;
-        position: relative;
-        width: 30px;
-        height: 20px;
         position: relative;
         z-index: 3;
 
         &:before{
+            @include height(4px);
+            @include width(100%);
             content: '';
             background-color: variables.$color_1;
             position: absolute;
-            width: 100%;
-            height: 4px;
             left: 0;
             top: 0;
         } 
 
         &:after {
+            @include height(4px);
+            @include width(100%);
             content: '';
             background-color: variables.$color_1;
             position: absolute;
-            width: 100%;
-            height: 4px;
             left: 0;
             bottom: 0;
         } 
-        &span{
+        & span{
+            @include height(4px);
+            @include width(100%);
             position: absolute;
             background-color: variables.$color_1;
             left: 0;
-            width: 100%;
-            height: 4px;
-            top: 9px;
+            top: 8px;
         }
     }
     
     .header__menu {
+        @include height(100%);
+        @include width(100%);
         position: fixed;
         top: 0;
         left: 0;
-        width: 100%;
-        height: 100%;
         background-color: variables.$color_3;
         padding: 70px 10px 20px 10px;
     }
     .header__list {
         display: block;
-        &li {
+        & li {
             margin: 0px 0px 20px 0px;
         }
     }
